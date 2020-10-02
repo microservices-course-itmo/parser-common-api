@@ -1,0 +1,17 @@
+syntax = "proto3";
+package com.wine.to.up.parser.common.service.api.protobuf;
+
+message Product {
+  string name = 1;
+  string brand = 2;
+  string country = 3;
+  float capacity = 4;
+  float strength = 5;
+  string color = 6;
+  string sugar = 7;
+  float price = 8;
+}
+
+message UpdateProductsMessage {
+  repeated Product products = 1;
+}
