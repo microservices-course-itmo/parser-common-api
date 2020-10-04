@@ -2,16 +2,43 @@ syntax = "proto3";
 package com.wine.to.up.parser.common.api.protobuf;
 
 message Product {
+  enum Color {
+    RED = 0;
+    ROSE = 1;
+    WHITE = 2;
+    ORANGE = 3;
+  }
+
+  enum Sugar {
+    DRY = 0;
+    MEDIUM_DRY = 1;
+    MEDIUM = 2;
+    SWEET = 3;
+  }
+
   string name = 1;
   string brand = 2;
   string country = 3;
   float capacity = 4;
   float strength = 5;
-  string color = 6;
-  string sugar = 7;
-  float price = 8;
+  Color color = 6;
+  Sugar sugar = 7;
+  float old_price = 8;
+  string image = 9;
+  int32 discount = 10;
+  string manufacturer = 11;
+  string region = 12;
+  string link = 13;
+  string grape_sort = 14;
+  int32 year = 15;
+  string description = 16;
+  string gastronomy = 17;
+  string taste = 18;
+  string flavor = 19;
+  float rating = 20;
 }
 
 message UpdateProductsMessage {
+  string shop_link = 2;
   repeated Product products = 1;
 }
