@@ -1,5 +1,5 @@
 syntax = "proto3";
-package com.wine.to.up.parser.common.service.api.protobuf;
+package com.wine.to.up.parser.common.api.protobuf;
 
 message Product {
   string name = 1;
