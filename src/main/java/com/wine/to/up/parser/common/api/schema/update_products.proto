@@ -1,5 +1,5 @@
 syntax = "proto3";
-package com.wine.to.up.parser.common.api.protobuf;
+package com.wine.to.up.parser.common.api.schema;
 
 message Product {
   enum Color {
