@@ -11,16 +11,33 @@
 
     <properties>
         <lombok.version>1.18.10</lombok.version>
+        <javax.version>2.0.1.Final</javax.version>
         <feign.version>9.3.1</feign.version>
         <spring.version>2.3.1.RELEASE</spring.version>
         <protobuf.version>3.13.0</protobuf.version>
+        <spring.boot.version>2.3.1.RELEASE</spring.boot.version>
     </properties>
 
     <dependencies>
         <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+        </dependency>
+        <dependency>
             <groupId>com.google.protobuf</groupId>
             <artifactId>protobuf-java</artifactId>
             <version>${protobuf.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot</artifactId>
+            <version>${spring.boot.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>${javax.version}</version>
         </dependency>
     </dependencies>
 
