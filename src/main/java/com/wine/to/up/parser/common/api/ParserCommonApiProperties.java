@@ -3,6 +3,7 @@ package com.wine.to.up.parser.common.api;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
@@ -16,9 +17,9 @@ import org.springframework.stereotype.Component;
  */
 @Component
 @PropertySource("classpath:application-common-parser-api.properties")
+@ConfigurationProperties(prefix = "parser.common.api")
 @Setter
 @Getter
 public class ParserCommonApiProperties {
-    @Value("${parser.common.api.parser-wine-position-parsed-events}")
     private String parserWinePositionParsedEvents;
 }
