@@ -6,7 +6,7 @@
 
     <groupId>com.wine.to.up</groupId>
     <artifactId>parser-common-api</artifactId>
-    <version>0.2.0-SNAPSHOT</version>
+    <version>0.2.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <properties>
@@ -72,14 +72,14 @@
                         </goals>
                         <configuration>
                             <inputDirectories>
-                                <include>${project.basedir}/src/main/java/com/wine/to/up/parser/common/api/schema</include>
+                                <include>${project.basedir}/src/main/java</include>
                             </inputDirectories>
                             <outputTargets>
                                 <outputTarget>
                                     <type>java</type>
                                     <addSources>main</addSources>
                                     <outputDirectory>
-                                        ${project.basedir}/target/generated-sources/protobuf
+                                        ${project.basedir}/src/main/java
                                     </outputDirectory>
                                 </outputTarget>
                             </outputTargets>

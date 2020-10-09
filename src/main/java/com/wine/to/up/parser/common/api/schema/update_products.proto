@@ -24,18 +24,19 @@ message Product {
   Color color = 6;
   Sugar sugar = 7;
   float old_price = 8;
+  float new_price = 21;
   string image = 9;
-  int32 discount = 10;
   string manufacturer = 11;
-  string region = 12;
+  repeated string region = 12;
   string link = 13;
-  string grape_sort = 14;
+  repeated string grape_sort = 14;
   int32 year = 15;
   string description = 16;
   string gastronomy = 17;
   string taste = 18;
   string flavor = 19;
   float rating = 20;
+  bool sparkling = 22;
 }
 
 message UpdateProductsMessage {
