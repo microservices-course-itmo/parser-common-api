@@ -1,0 +1,13 @@
+target/
+.bin/
+.idea/
+.tmp/
+*.class
+*.iml
+*.iws
+*.ipr
+*.db
+.DS_Store
+.classpath
+bin
+src/main/java/com/wine/to/up/parser/common/api/schema/UpdateProducts.java

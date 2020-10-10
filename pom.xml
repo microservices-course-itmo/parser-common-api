@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.wine.to.up</groupId>
+    <artifactId>parser-common-api</artifactId>
+    <version>0.2.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <properties>
+        <lombok.version>1.18.10</lombok.version>
+        <javax.version>2.0.1.Final</javax.version>
+        <feign.version>9.3.1</feign.version>
+        <spring.version>2.3.1.RELEASE</spring.version>
+        <protobuf.version>3.13.0</protobuf.version>
+        <spring.boot.version>2.3.1.RELEASE</spring.boot.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.protobuf</groupId>
+            <artifactId>protobuf-java</artifactId>
+            <version>${protobuf.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot</artifactId>
+            <version>${spring.boot.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>${javax.version}</version>
+        </dependency>
+    </dependencies>
+
+    <!-- Нужен для пуша jar в репозиторий libs-snapshot-local в jfrog artifactory -->
+    <distributionManagement>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>bc9cbe1b5658-snapshots</name> <!-- Сгенерировано jfrog -->
+            <url>http://artifactory:8081/artifactory/libs-snapshot-local</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>11</source>
+                    <target>11</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>com.github.os72</groupId>
+                <artifactId>protoc-jar-maven-plugin</artifactId>
+                <version>3.11.4</version>
+                <executions>
+                    <execution>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <inputDirectories>
+                                <include>${project.basedir}/src/main/java</include>
+                            </inputDirectories>
+                            <outputTargets>
+                                <outputTarget>
+                                    <type>java</type>
+                                    <addSources>main</addSources>
+                                    <outputDirectory>
+                                        ${project.basedir}/src/main/java
+                                    </outputDirectory>
+                                </outputTarget>
+                            </outputTargets>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
