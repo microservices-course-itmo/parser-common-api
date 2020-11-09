@@ -25,7 +25,7 @@ message Wine {
   Sugar sugar = 7;
   float old_price = 8;
   float new_price = 21;
-  string image = 9;
+  byte[] image = 9;
   string manufacturer = 11;
   repeated string region = 12;
   string link = 13;
