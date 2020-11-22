@@ -7,6 +7,8 @@ message Wine {
     ROSE = 1;
     WHITE = 2;
     ORANGE = 3;
+    BLUE = 4;
+    UNDEFINED_COLOR = 5;
   }
 
   enum Sugar {
@@ -14,6 +16,7 @@ message Wine {
     MEDIUM_DRY = 1;
     MEDIUM = 2;
     SWEET = 3;
+    UNDEFINED_SUGAR = 4;
   }
 
   string name = 1;
