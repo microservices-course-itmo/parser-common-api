@@ -40,7 +40,7 @@ message Wine {
   string flavor = 19;
   float rating = 20;
   bool sparkling = 22;
-  int32 in_stock = 23;
+  string in_stock = 23;
   string city = 24;
 }
 
